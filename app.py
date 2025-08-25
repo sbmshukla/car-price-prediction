@@ -2,7 +2,6 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
-import os
 # Title
 st.title("Car Attributes Form")
 
@@ -39,9 +38,7 @@ with st.form("car_form"):
     if submitted:
         st.success("Form submitted successfully!")
 
-        # Load the model
-        model_path = os.path.join("models", "model.pkl")
-        model = pickle.load(open(model_path, "rb"))
+        model = pickle.load(open("model.pkl", "rb"))
 
         # Create dataframe for the model
         car_data = pd.DataFrame([{
