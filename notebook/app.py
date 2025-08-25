@@ -1,0 +1,2 @@
+import stre
+print("Hello")
