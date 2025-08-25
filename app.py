@@ -39,7 +39,8 @@ with st.form("car_form"):
         st.success("Form submitted successfully!")
 
         # Load the model
-        model = pickle.load(open(r'models\model.pkl', 'rb'))
+        model_path = os.path.join("models", "model.pkl")
+        model = pickle.load(open(model_path, "rb"))
 
         # Create dataframe for the model
         car_data = pd.DataFrame([{
